@@ -20,7 +20,7 @@ class _ResetPasswordState extends State<ResetPassword> {
             child: Column(
               children: [
                 SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.02,
+                  height: MediaQuery.of(context).size.height * 0.01,
                 ),
                 Row(
                   children: [
@@ -105,7 +105,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, '/check_mail');
+                    Navigator.pushNamed(context, 'check_mail');
                   },
                   child: Container(
                     height: MediaQuery.of(context).size.height * 0.08,

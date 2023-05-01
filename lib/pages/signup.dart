@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:incubation2/constants/colors.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});
@@ -11,7 +12,7 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFEDF5F4),
+      backgroundColor: Bg,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
@@ -20,15 +21,26 @@ class _SignUpState extends State<SignUp> {
             height: MediaQuery.of(context).size.height * 0.9,
             child: Column(
               children: [
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.02,
+                ),
                 Row(
                   children: [
                     IconButton(
-                      onPressed: () {},
-                      icon: Icon(Icons.arrow_back_ios),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: Icon(
+                        Icons.arrow_back,
+                        color: Text1,
+                        size: 30,
+                      ),
                     ),
                   ],
                 ),
-                SizedBox(height: 40),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 0.1,
+                ),
                 Container(
                   child: Text(
                     'Create your Account',

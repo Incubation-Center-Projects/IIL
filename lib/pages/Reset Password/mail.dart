@@ -25,7 +25,9 @@ class _CheckMailState extends State<CheckMail> {
                 Row(
                   children: [
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                       icon: Icon(
                         Icons.arrow_back,
                         color: Text1,
@@ -73,7 +75,7 @@ class _CheckMailState extends State<CheckMail> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, '/check_mail');
+                    Navigator.pushNamed(context, 'new_password');
                   },
                   child: Container(
                     height: MediaQuery.of(context).size.height * 0.08,
