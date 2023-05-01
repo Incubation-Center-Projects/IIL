@@ -39,7 +39,9 @@ class _StartPageState extends State<StartPage> {
               ),
               SizedBox(height: 80),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, 'signup');
+                },
                 child: Container(
                   height: 50,
                   width: 260,
