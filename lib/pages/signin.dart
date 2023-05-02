@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:incubation2/constants/colors.dart';
 
-class SignUp extends StatefulWidget {
-  const SignUp({super.key});
+import '../constants/colors.dart';
+
+class Signin extends StatefulWidget {
+  const Signin({super.key});
 
   @override
-  State<SignUp> createState() => _SignUpState();
+  State<Signin> createState() => _SigninState();
 }
 
-class _SignUpState extends State<SignUp> {
+class _SigninState extends State<Signin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +34,7 @@ class _SignUpState extends State<SignUp> {
                         )),
                         GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(context, 'splash');
+                            Navigator.pushNamed(context, 'signup');
                           },
                           child: Icon(
                             Icons.arrow_back_ios,
@@ -45,37 +46,13 @@ class _SignUpState extends State<SignUp> {
                     ),
                     SizedBox(height: 40),
                     Text(
-                      'Create your Account',
+                      'Welcome Back!',
                       style: TextStyle(
                         fontSize: 25,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                     SizedBox(height: 40),
-                    SizedBox(
-                      height: 40,
-                      width: 400,
-                      child: TextField(
-                        textAlignVertical: TextAlignVertical.bottom,
-                        decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.transparent),
-                            borderRadius: BorderRadius.circular(25),
-                          ),
-                          filled: true,
-                          prefixIcon: Icon(
-                            Icons.person,
-                            size: 18,
-                            color: Colors.black,
-                          ),
-                          border: InputBorder.none,
-                          hintStyle:
-                              TextStyle(color: Colors.grey[500], fontSize: 15),
-                          hintText: "Enter Name",
-                          fillColor: Colors.white,
-                        ),
-                      ),
-                    ),
                     SizedBox(height: 20),
                     SizedBox(
                       height: 40,
@@ -128,30 +105,6 @@ class _SignUpState extends State<SignUp> {
                     ),
                     SizedBox(height: 20),
                     SizedBox(
-                      height: 40,
-                      width: 400,
-                      child: TextField(
-                        textAlignVertical: TextAlignVertical.bottom,
-                        decoration: InputDecoration(
-                          enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: Colors.transparent),
-                            borderRadius: BorderRadius.circular(25),
-                          ),
-                          filled: true,
-                          prefixIcon: Icon(
-                            Icons.lock,
-                            size: 18,
-                            color: Colors.black,
-                          ),
-                          border: InputBorder.none,
-                          hintStyle:
-                              TextStyle(color: Colors.grey[500], fontSize: 15),
-                          hintText: "Confirm Password",
-                          fillColor: Colors.white,
-                        ),
-                      ),
-                    ),
-                    SizedBox(
                       height: 45,
                     ),
                     GestureDetector(
@@ -174,7 +127,7 @@ class _SignUpState extends State<SignUp> {
                         ),
                         child: Center(
                           child: Text(
-                            'Sign Up',
+                            'Sign In',
                             style: TextStyle(
                               color: Color.fromRGBO(255, 255, 255, 1),
                               fontSize: 20,
@@ -185,7 +138,15 @@ class _SignUpState extends State<SignUp> {
                       ),
                     ),
                     SizedBox(
-                      height: 30,
+                      height: 20,
+                    ),
+                    Text(
+                      'Forgot the password',
+                      style: TextStyle(
+                          color: Colors.blue, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(
+                      height: 50,
                     ),
                     Text('or continue with'),
                     SizedBox(
@@ -213,7 +174,7 @@ class _SignUpState extends State<SignUp> {
                       ],
                     ),
                     SizedBox(
-                      height: 40,
+                      height: 80,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -221,13 +182,13 @@ class _SignUpState extends State<SignUp> {
                         Text('Already have an account?'),
                         GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(context, 'signin');
+                            Navigator.pushNamed(context, 'signup');
                           },
                           child: Text(
-                            ' Sign in',
+                            ' Sign Up',
                             style: TextStyle(color: Colors.blue),
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ],
