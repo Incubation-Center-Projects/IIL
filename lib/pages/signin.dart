@@ -14,13 +14,13 @@ class _SigninState extends State<Signin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFEDf5f4),
-      body: SafeArea(
-        child: Center(
-          child: SingleChildScrollView(
-            child: SizedBox(
+      backgroundColor: Bg,
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Center(
+            child: Container(
               width: MediaQuery.of(context).size.width * 0.89,
-              height: MediaQuery.of(context).size.height * 2,
+              height: MediaQuery.of(context).size.height,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
@@ -34,7 +34,7 @@ class _SigninState extends State<Signin> {
                         )),
                         GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(context, 'signup');
+                            Navigator.pop(context);
                           },
                           child: Icon(
                             Icons.arrow_back_ios,
@@ -140,10 +140,15 @@ class _SigninState extends State<Signin> {
                     SizedBox(
                       height: 20,
                     ),
-                    Text(
-                      'Forgot the password',
-                      style: TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.bold),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, 'reset_password');
+                      },
+                      child: Text(
+                        'Forgot the password',
+                        style: TextStyle(
+                            color: Colors.blue, fontWeight: FontWeight.bold),
+                      ),
                     ),
                     SizedBox(
                       height: 50,
@@ -174,7 +179,7 @@ class _SigninState extends State<Signin> {
                       ],
                     ),
                     SizedBox(
-                      height: 80,
+                      height: 60,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

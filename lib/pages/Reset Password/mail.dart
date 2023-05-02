@@ -15,6 +15,7 @@ class _CheckMailState extends State<CheckMail> {
       backgroundColor: Bg,
       body: SafeArea(
         child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
@@ -160,7 +161,7 @@ class _CheckMailState extends State<CheckMail> {
                               text: '\n',
                               style: TextStyle(
                                 color: Text1,
-                                fontSize: 5,
+                                fontSize: 2,
                               ),
                             ),
                             TextSpan(

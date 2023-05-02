@@ -13,7 +13,7 @@ void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: 'bottom_nav',
+      initialRoute: 'splash',
       routes: {
         'splash': (context) => StartPage(),
         'signup': (context) => SignUp(),

@@ -13,7 +13,8 @@ class BookMarksPage extends StatelessWidget {
         centerTitle: true,
         title: const Text(
           "My Bookmarks",
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
+          style: TextStyle(
+              fontWeight: FontWeight.bold, color: Colors.black, fontSize: 18),
         ),
         leading: IconButton(
             onPressed: () => Navigator.pop(context),
@@ -108,85 +109,100 @@ class CustomBookmarkTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: BeveledRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-      elevation: 4.0,
-      child: ListTile(
-        leading: Image.network(
-          "https://i.ytimg.com/vi/jta49pz_klc/maxresdefault.jpg",
-          height: MediaQuery.of(context).size.height * 0.1,
-          width: MediaQuery.of(context).size.width * 0.2,
-        ),
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(30.0)),
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(30.0),
+          ),
+          elevation: 4.0,
+          child: ListTile(
+            leading: Image.network(
+              "https://i.ytimg.com/vi/jta49pz_klc/maxresdefault.jpg",
+              height: MediaQuery.of(context).size.height * 0.1,
+              width: MediaQuery.of(context).size.width * 0.2,
+            ),
+            title: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                TextButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.white),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                        side: const BorderSide(
-                          color: Colors.grey,
-                          width: 2,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    SizedBox(
+                      height: 28,
+                      width: 60,
+                      child: TextButton(
+                        onPressed: () {},
+                        style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.white),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30),
+                              side: const BorderSide(
+                                color: Colors.grey,
+                                width: 2,
+                              ),
+                            ),
+                          ),
+                        ),
+                        child: Text(
+                          tag,
+                          style: const TextStyle(
+                              color: Color(0xff6C63FF), fontSize: 11),
                         ),
                       ),
                     ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.bookmark),
+                    )
+                  ],
+                ),
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 11,
                   ),
-                  child: Text(
-                    tag,
-                    style: const TextStyle(
-                      color: Color(0xff6C63FF),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Rs. 1500",
+                      style: TextStyle(
+                        fontSize: MediaQuery.of(context).size.width * 0.04,
+                        fontWeight: FontWeight.w800,
+                        color: Color(0xff6C63FF),
+                      ),
                     ),
-                  ),
+                    Text(
+                      "Rs. 2500",
+                      style: TextStyle(decoration: TextDecoration.lineThrough),
+                    )
+                  ],
                 ),
-                IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.bookmark),
-                )
               ],
             ),
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 15,
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Text(
-                  "Rs. 1500",
-                  style: TextStyle(
-                    fontSize: MediaQuery.of(context).size.width * 0.05,
-                    fontWeight: FontWeight.w800,
-                    color: Color(0xff6C63FF),
-                  ),
+            subtitle: Row(
+              children: const [
+                Icon(
+                  Icons.star_half,
+                  color: Colors.amber,
+                  size: 20,
                 ),
                 Text(
-                  "Rs. 2500",
-                  style: TextStyle(decoration: TextDecoration.lineThrough),
-                )
+                  "4.5  |  22 reviews",
+                  style: TextStyle(fontSize: 11),
+                ),
               ],
             ),
-          ],
+            tileColor: Colors.white,
+          ),
         ),
-        subtitle: Row(
-          children: const [
-            Icon(
-              Icons.star_half,
-              color: Colors.amber,
-              size: 20,
-            ),
-            Text("4.5  |  22 reviews"),
-          ],
-        ),
-        tileColor: Colors.white,
       ),
     );
   }

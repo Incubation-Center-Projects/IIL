@@ -25,7 +25,9 @@ class _ResetPasswordState extends State<ResetPassword> {
                 Row(
                   children: [
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                       icon: Icon(
                         Icons.arrow_back,
                         color: Text1,

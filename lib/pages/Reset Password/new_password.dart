@@ -171,7 +171,9 @@ class _NewPasswordState extends State<NewPassword> {
                   height: MediaQuery.of(context).size.height * 0.02,
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, 'bottom_nav');
+                  },
                   child: Container(
                     height: MediaQuery.of(context).size.height * 0.08,
                     width: MediaQuery.of(context).size.width * 0.9,

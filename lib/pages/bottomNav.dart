@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:incubation2/constants/colors.dart';
+import 'package:incubation2/pages/cartpage.dart';
+import 'package:incubation2/pages/coursepage.dart';
+import 'package:incubation2/pages/profilepage.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'bookmarks.dart';
 import 'homepage.dart';
@@ -19,6 +22,8 @@ class _MyHomePageState extends State<MyHomePage> {
     const HomePage(),
     const BookMarksPage(),
     const NotificationPage(),
+    const CoursePage(),
+    const ProfilePage()
   ];
 
   @override

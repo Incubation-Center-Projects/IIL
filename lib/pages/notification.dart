@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:incubation2/constants/colors.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -8,11 +9,12 @@ class NotificationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Bg,
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: const Text(
           'Notification',
-          style: TextStyle(color: Colors.black, fontSize: 25),
+          style: TextStyle(color: Colors.black, fontSize: 18),
         ),
         centerTitle: true,
         leading: IconButton(
@@ -30,7 +32,7 @@ class NotificationPage extends StatelessWidget {
           children: [
             const Text(
               "Today",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             const CustomListTile(
               icon: Icons.account_balance_wallet,
@@ -45,7 +47,7 @@ class NotificationPage extends StatelessWidget {
             ),
             const Text(
               "Yestarday",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             const CustomListTile(
               title: "New category Courses",
@@ -59,7 +61,7 @@ class NotificationPage extends StatelessWidget {
                 icon: Icons.credit_card),
             const Text(
               "April 24, 2023",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
             ),
             const CustomListTile(
               title: "Account Setup Successful",

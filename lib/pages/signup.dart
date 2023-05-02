@@ -17,9 +17,9 @@ class _SignUpState extends State<SignUp> {
       body: SafeArea(
         child: Center(
           child: SingleChildScrollView(
-            child: SizedBox(
+            child: Container(
               width: MediaQuery.of(context).size.width * 0.89,
-              height: MediaQuery.of(context).size.height * 2,
+              height: MediaQuery.of(context).size.height,
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
@@ -33,7 +33,7 @@ class _SignUpState extends State<SignUp> {
                         )),
                         GestureDetector(
                           onTap: () {
-                            Navigator.pushNamed(context, 'splash');
+                            Navigator.pop(context);
                           },
                           child: Icon(
                             Icons.arrow_back_ios,
@@ -156,7 +156,7 @@ class _SignUpState extends State<SignUp> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, 'signup');
+                        Navigator.pushNamed(context, 'bottom_nav');
                       },
                       child: Container(
                         height: MediaQuery.of(context).size.height * 0.08,
